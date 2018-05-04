@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -101,7 +103,8 @@ public class Validations
     }
 
     //Luhn Algorithm to validate the ID
-    public Boolean getIdentitySummationRL(BigInteger identities){
+    @NotNull
+    private Boolean getIdentitySummationRL(BigInteger identities){
         char[] idchars = identities.toString().toCharArray();
         int sum = 0;
         // loop over each digit, except the check-digit
