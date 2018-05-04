@@ -94,13 +94,18 @@ public class Validations
         return matcher.matches();
     }
 
-    public boolean validString(String s)
+    /**
+     * Method to validate no digits in string
+     * @param str string
+     * @return boolean
+     */
+    public boolean validString(String str)
     {
         boolean valid = false;
 
-        for(int x = 0; x <= s.length() -1; x++)
+        for(int x = 0; x <= str.length() -1; x++)
         {
-            if(!Character.isDigit( s.charAt( x ) ))
+            if(!Character.isDigit( str.charAt( x ) ))
             {
                 valid = true;
                 x++;
