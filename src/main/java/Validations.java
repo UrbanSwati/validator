@@ -120,6 +120,11 @@ public class Validations
         return valid;
     }
 
+    /**
+     * Method to validate South African ID number
+     * @param id South African Identity Document number
+     * @return boolean
+     */
     public boolean isValidID(String id)
     {
         boolean valid = false;
