@@ -16,6 +16,11 @@ public class Validations
 
     }
 
+    /**
+     * Method to validate e-mail address
+     * @param email users e-mail to be validated
+     * @return boolean
+     */
     public boolean isValidEmail(String email)
     {
         String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
