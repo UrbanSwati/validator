@@ -32,6 +32,11 @@ public class Validations
         return matcher.matches();
     }
 
+    /**
+     * Method to validate telephone number
+     * @param tel telephone number
+     * @return boolean
+     */
     public boolean validateTel(String tel)
     {
         boolean valid = false;
