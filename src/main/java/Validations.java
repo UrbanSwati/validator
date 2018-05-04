@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Home on 2016/06/09.
+ * Created by Phil (https://github.com/NgakaMafona) Modified by William (https://github.com/UrbanSwati)
  */
 public class Validations
 {
@@ -117,5 +117,7 @@ public class Validations
 
         return checkdigit == compdigit;
     }
+
+
 
 }
