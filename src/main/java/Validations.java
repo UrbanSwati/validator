@@ -136,7 +136,12 @@ public class Validations
         return valid;
     }
 
-    //Luhn Algorithm to validate the ID
+    /**
+     * Helper method to validate the checksum of Identity number
+     * using Luhn Algorithm
+     * @param identities South African Identity Document number
+     * @return boolean
+     */
     @NotNull
     private Boolean getIdentitySummationRL(BigInteger identities){
         char[] idchars = identities.toString().toCharArray();
