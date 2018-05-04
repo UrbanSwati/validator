@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by Phil (https://github.com/NgakaMafona) Modified by William (https://github.com/UrbanSwati)
+ * Validations class used for from validations in applications
  */
 public class Validations
 {
