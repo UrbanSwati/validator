@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
  */
 public class Validations
 {
+
     public Validations()
     {
 
@@ -19,7 +20,7 @@ public class Validations
     /**
      * Method to validate e-mail address
      * @param email users e-mail to be validated
-     * @return boolean
+     * @return <code>boolean</code>
      */
     public boolean isValidEmail(String email)
     {
@@ -35,7 +36,7 @@ public class Validations
     /**
      * Method to validate telephone number
      * @param tel telephone number
-     * @return boolean
+     * @return <code>boolean</code>
      */
     public boolean validateTel(String tel)
     {
@@ -72,7 +73,7 @@ public class Validations
      * at least eight characters length
      *
      * @param password users password
-     * @return boolean
+     * @return <code>boolean</code>
      */
     public boolean validPassword(String password)
     {
@@ -97,7 +98,7 @@ public class Validations
     /**
      * Method to validate no digits in string
      * @param str string
-     * @return boolean
+     * @return <code>boolean</code>
      */
     public boolean validString(String str)
     {
