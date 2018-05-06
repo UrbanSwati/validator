@@ -19,12 +19,12 @@ public class ValidationsTest {
     public void validPassword() {
         assertFalse(new Validations().validPassword("123456"));
         assertFalse(new Validations().validPassword("12345678"));
-        assertFalse(new Validations().validPassword("iamWilliam94"));
-        assertTrue(new Validations().validPassword("iamWilliam94!"));
-        assertFalse(new Validations().validPassword("iamWilliam"));
+        assertFalse(new Validations().validPassword("myPassword"));
+        assertTrue(new Validations().validPassword("myPassword01!"));
+        assertFalse(new Validations().validPassword("myPassword"));
         assertFalse(new Validations().validPassword(" "));
-        assertFalse(new Validations().validPassword("iamWilliam 23"));
-        assertFalse(new Validations().validPassword("iamWi95"));
+        assertFalse(new Validations().validPassword("myPassword 01"));
+        assertFalse(new Validations().validPassword("myPass01"));
     }
 
 //    @Test
@@ -38,16 +38,16 @@ public class ValidationsTest {
     @Test
     public void isValidID() {
         //Correct 13 numbers and valid ID
-        assertTrue(new Validations().isValidID("9401195312088"));
+        assertTrue(new Validations().isValidID("ID_Number"));
 
         //Incorrect: 12 numbers
-        assertFalse(new Validations().isValidID("940119531208"));
+        assertFalse(new Validations().isValidID("ID_Number"));
 
         //Incorrect: 14 numbers
-        assertFalse(new Validations().isValidID("94011953120888"));
+        assertFalse(new Validations().isValidID("ID_Number"));
 
         //Incorrect: invalid ID
-        assertFalse(new Validations().isValidID("9401195312188"));
+        assertFalse(new Validations().isValidID("ID_Number"));
 
     }
 }
