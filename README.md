@@ -9,7 +9,7 @@ To generate html java docs execute:
 This will generate documentation in html in your project folder.
 
 ## Methods included
-* validateTel
+* isValidPhoneNo
 * validPassword
 * isValidEmail
 * validString
