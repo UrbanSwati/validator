@@ -6,25 +6,23 @@ import java.util.regex.Pattern;
 
 /**
  * @author Phil & William
- *
+ * <p>
  * Created by Phil (https://github.com/NgakaMafona) Modified by William (https://github.com/UrbanSwati)
  * Validations class used for from validations in applications
  */
-public class Validations
-{
+public class Validations {
 
-    public Validations()
-    {
+    public Validations() {
 
     }
 
     /**
      * Method to validate e-mail address
+     *
      * @param email users e-mail to be validated
      * @return <code>boolean</code>
      */
-    public boolean isValidEmail(String email)
-    {
+    public boolean isValidEmail(String email) {
         String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
@@ -36,36 +34,25 @@ public class Validations
 
     /**
      * Method to validate telephone number
-     * @param tel telephone number
+     * validate phone numbers of format "1234567890"
+     *
+     * @param phone telephone number
      * @return <code>boolean</code>
      */
-    public boolean validateTel(String tel)
-    {
-        boolean valid = false;
+    public boolean isValidPhoneNo(String phone) {
+        String PHONE_PATTEN = "^\\d{10}$";
 
-        int count = 0;
+        Pattern pattern = Pattern.compile(PHONE_PATTEN);
 
-        for(int i = 0; i < tel.length(); i++)
-        {
-            if(Character.isDigit(tel.charAt(i)))
-            {
-                count++;
-                valid = true;
-            }
-            else
-            {
-                valid = false;
-                break;
-            }
-        }
+        Matcher matcher = pattern.matcher(phone);
 
-        return valid;
+        return matcher.matches();
     }
 
 
     /**
      * Method to validate a strong password
-     *
+     * <p>
      * a digit must occur at least once
      * a lower case letter must occur at least once
      * an upper case letter must occur at least once
@@ -76,17 +63,16 @@ public class Validations
      * @param password users password
      * @return <code>boolean</code>
      */
-    public boolean validPassword(String password)
-    {
+    public boolean validPassword(String password) {
         /*       ^                # start-of-string
-        *        (?=.*[0-9])       # a digit must occur at least once
-        *        (?=.*[a-z])       # a lower case letter must occur at least once
-        *        (?=.*[A-Z])       # an upper case letter must occur at least once
-        *        (?=.*[@#$%^&+=])  # a special character must occur at least once
-        *        (?=\S+$)          # no whitespace allowed in the entire string
-        *        .{8,}             # anything, at least eight places though
-        *         $                # end-of-string
-        */
+         *        (?=.*[0-9])       # a digit must occur at least once
+         *        (?=.*[a-z])       # a lower case letter must occur at least once
+         *        (?=.*[A-Z])       # an upper case letter must occur at least once
+         *        (?=.*[@#$%^&+=])  # a special character must occur at least once
+         *        (?=\S+$)          # no whitespace allowed in the entire string
+         *        .{8,}             # anything, at least eight places though
+         *         $                # end-of-string
+         */
 
         String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!^&+=])(?=\\S+$).{8,}$";
 
@@ -98,22 +84,18 @@ public class Validations
 
     /**
      * Method to validate no digits in string
+     *
      * @param str string
      * @return <code>boolean</code>
      */
-    public boolean validString(String str)
-    {
+    public boolean validString(String str) {
         boolean valid = false;
 
-        for(int x = 0; x <= str.length() -1; x++)
-        {
-            if(!Character.isDigit( str.charAt( x ) ))
-            {
+        for (int x = 0; x <= str.length() - 1; x++) {
+            if (!Character.isDigit(str.charAt(x))) {
                 valid = true;
                 x++;
-            }
-            else
-            {
+            } else {
                 valid = false;
                 break;
             }
@@ -124,14 +106,14 @@ public class Validations
 
     /**
      * Method to validate South African ID number
+     *
      * @param id South African Identity Document number
      * @return boolean
      */
-    public boolean isValidID(String id)
-    {
+    public boolean isValidID(String id) {
         boolean valid = false;
 
-        if(id.length() == 13){
+        if (id.length() == 13) {
             valid = getIdentitySummationRL(new BigInteger(id));
         }
 
@@ -141,11 +123,12 @@ public class Validations
     /**
      * Helper method to validate the checksum of Identity number
      * using Luhn Algorithm
+     *
      * @param identities South African Identity Document number
      * @return boolean
      */
     @NotNull
-    private Boolean getIdentitySummationRL(BigInteger identities){
+    private Boolean getIdentitySummationRL(BigInteger identities) {
         char[] idchars = identities.toString().toCharArray();
         int sum = 0;
         // loop over each digit, except the check-digit
@@ -162,7 +145,6 @@ public class Validations
 
         return checkdigit == compdigit;
     }
-
 
 
 }

@@ -1,7 +1,5 @@
 import org.junit.Test;
 
-import java.math.BigInteger;
-
 import static org.junit.Assert.*;
 
 public class ValidationsTest {
@@ -27,10 +25,12 @@ public class ValidationsTest {
         assertFalse(new Validations().validPassword("myPass01"));
     }
 
-//    @Test
-//    public void validateTel() {
-//    }
-//
+    @Test
+    public void validatePhoneNo() {
+        assertTrue(new Validations().isValidPhoneNo("1234567890"));
+        assertFalse(new Validations().isValidPhoneNo("12345678"));
+    }
+
 //    @Test
 //    public void validString() {
 //    }
